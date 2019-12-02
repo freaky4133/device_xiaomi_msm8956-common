@@ -292,7 +292,7 @@
 
     <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
      on the headphone/microphone jack. When false use the older uevent framework -->
-    <bool name="config_useDevInputEventForAudioJack">true</bool>
+    <bool name="config_useDevInputEventForAudioJack">false</bool>
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
@@ -321,8 +321,8 @@
     <integer translatable="false" name="config_bluetooth_operating_voltage_mv">3300</integer>
 
     <!-- Enable overlay for all location components. -->
-    <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
-    <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
+    <!-- <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
+    <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string> -->
 
     <!-- Default list of files pinned by the Pinner Service -->
     <string-array translatable="false" name="config_defaultPinnerServiceFiles">
@@ -451,7 +451,7 @@
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
 
    <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
-    <bool name="config_cleanupUnusedFingerprints">false</bool>
+    <bool name="config_cleanupUnusedFingerprints">true</bool>
 
    <!-- Does the notification LED support multiple colors?
         Used to decide if the user can change the colors -->
@@ -465,5 +465,13 @@
          For this time after the screen turns on, the Power Manager
          will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">200</integer>
+
+   <!-- Enables or disables fading edges when marquee is enabled in TextView.
+         Off by default, since the framebuffer readback used to implement the
+         fading edges is prohibitively expensive on most GPUs. -->
+    <bool name="config_ui_enableFadingMarquee">false</bool>
+
+   <!-- Whether the device has fingeprint sensor or not -->
+    <bool name="config_hasFingerprintSensor">true</bool>
 
 </resources>
